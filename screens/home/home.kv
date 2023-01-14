@@ -1,0 +1,30 @@
+#: import platform kivy.platform
+
+
+YoutubeDownloader:
+
+<YoutubeDownloader>:
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing:"15dp"
+        MDBoxLayout:
+            size_hint_y:None
+            height:'70dp'
+            spacing:'20dp'
+            md_bg_color:app.theme_cls.primary_color
+            id:appbar
+            OneLineListItem:
+                text:'Your Link Will Appears Here'
+                ripple_alpha:0
+                id:link_holder
+        ScrollView:
+            bar_color:app.theme_cls.primary_color
+            bar_width:dp(15) if platform=='win' else dp(0)
+            effect_cls:'ScrollEffect'
+            scroll_type:['bars'] if platform=='win' else ['content']
+            MDBoxLayout:
+                padding:['20dp',0,'20dp','100dp']
+                spacing:'50dp'
+                adaptive_height:True
+                orientation:'vertical'
+                id:scroll_box

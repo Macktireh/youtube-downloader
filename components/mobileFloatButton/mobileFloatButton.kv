@@ -1,0 +1,10 @@
+#: import Window kivy.core.window.Window
+#: import Clipboard kivy.core.clipboard.Clipboard
+
+<MobileFloatButton>:
+    tooltip_text:'Paste Video Link'
+    icon:'content-paste'
+    pos_hint:{"right":1-dp(30)/Window.width,'y':dp(55)/Window.height}
+    on_release:
+        app.root.ids.link_holder.text=Clipboard.paste()
+        app.root.go()

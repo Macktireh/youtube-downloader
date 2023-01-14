@@ -1,0 +1,12 @@
+#: import threading threading
+
+
+<TooltipMobileBottomButton@MDRaisedButton+MDTooltip>:
+
+<MobileBottomButton>:
+    TooltipMobileBottomButton:
+        tooltip_text:'Download All Videos'
+        text:'Download All Videos'
+        size_hint_x:1
+        on_release:
+            threading.Thread(target=app.root.download_all).start()

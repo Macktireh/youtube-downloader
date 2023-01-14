@@ -1,0 +1,18 @@
+<TooltipIconButton@MDIconButton+MDTooltip>:
+<TopBarIconBox>:
+    adaptive_size:True
+    padding:'10dp'
+    spacing:'10dp'
+    TooltipIconButton:
+        icon:'assets/images/youtube.png'
+        tooltip_text:'Paste Video Link'
+        user_font_size:'20sp'
+        on_release:
+            app.root.ids.link_holder.text=Clipboard.paste()
+            app.root.go()
+    TooltipIconButton:
+        icon:'assets/images/trending.png'
+        tooltip_text:'Download All Videos'
+        user_font_size:'20sp'
+        on_release:
+            threading.Thread(target=app.root.download_all).start()
